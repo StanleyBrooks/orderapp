@@ -1,0 +1,36 @@
+<div class="jumbotron text-center">
+    <h1>Today's Supply Orders:</h1>
+</div>
+
+<% if (success.length > 0) { %>
+    <div class="alert alert-success"><%= success %></div>
+<% } %>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Store Location:</th>
+            <th>Daily Order:</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <% for (var order of orders) { %>
+            <tr>
+                <td><%= order.storeLocation %></td>
+                <td><%= order.storeOrder %></td>
+                <td ID="orderControlls" class="text-right">
+                    <a href="/orders/<%= order.slug %>" class="btn btn-sm btn-primary">View</a>
+                    <a href="/orders/<%= order.slug %>/edit" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="/orders/<%= order.slug %>/delete" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+
+    </tbody>
+</table>
+
+<dir class="text-center">
+    <a href="/orders/seed" class="btn btn-lg btn-danger">Seed DB!</a>
+</dir>

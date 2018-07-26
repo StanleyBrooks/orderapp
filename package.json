@@ -1,0 +1,42 @@
+{
+  "name": "orderapp",
+  "version": "0.4.1",
+  "description": "This is a supply ordering application meant to accept orders from several different locations and display them to one centralized place.  This is specifically designed for a small coffee shop with 3 physical locations and a kitchen that recieves all of the orders each day.",
+  "main": "server.js",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-ejs-layouts": "^2.4.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
+    "mongoose": "^5.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanleyBrooks/orderapp.git"
+  },
+  "keywords": [
+    "Supply",
+    "Order",
+    "mLab",
+    "express",
+    "mongoDB",
+    "mongoose",
+    "JavaScript",
+    "node.js",
+    "CodeLouisville"
+  ],
+  "author": "Stanley Brooks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StanleyBrooks/orderapp/issues"
+  },
+  "homepage": "https://github.com/StanleyBrooks/orderapp#readme"
+}
