@@ -16,11 +16,13 @@ Orders can be placed, viewed, edited and deleted and listed.  For example data g
 
 1. Go to root directory of project
 
-2. Run ‘npm install’ to install necessary packages (sudo npm install on linux based)
+2. Add .env to root directory
 
-3. Run ‘npm start’ to begin the app server
+3. Run ‘npm install’ to install necessary packages
 
-4. Open a localhost windows to the port it’s running on (localhost:3030)
+4. Run ‘npm start’ to begin the app server
+
+5. Open a localhost windows to the port it's running on (localhost:3030)
 
 
 ***
@@ -29,6 +31,7 @@ Orders can be placed, viewed, edited and deleted and listed.  For example data g
 
 + express
 + express-ejs-layouts
++ ejs
 + mongoose
 + body-parser
 + express-session
@@ -101,7 +104,7 @@ Orders can be placed, viewed, edited and deleted and listed.  For example data g
 + createDate is top priority in next version
 + employeeName would be useful to tell who made the list for management
 
-4. #### Add way to mark an order as complete without deleting it forever
+4. #### Add a way to mark an order as complete without deleting it forever
 
 + it would be useful to keep past supply orders, perhaps even use them to generate a generic one each day that can be edited
 
@@ -114,10 +117,12 @@ Orders can be placed, viewed, edited and deleted and listed.  For example data g
 
 + This redirects the user upon hitting an error and displays the error using flash
 
+
 ## Things to Fix:
 
-1. Creating a new entry that shares the name as one that already exists breaks the app.  This was done for the specific reason to make sure that there aren't lots of orders from the same store on the same day.  It would be much more useful if the app redirects to the update route for the given storeLocation
+1.  Creating a new entry that shares the name as one that already exists breaks the app.  This was done for the specific reason to make sure that there aren't lots of orders from the same store on the same day.  It would be much more useful if the app redirects to the update route for the given storeLocation
 
 2.  Get rid of express-validator, it throws the following error: (kind of fixed for now, will need more work in the future)
 
     `DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html`
+3.  Add redirect back to /orders after Seeding the Database
