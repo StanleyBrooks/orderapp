@@ -14,10 +14,10 @@ const app              = express();
 // Set sessions and cookie parser
 app.use(cookieParser());
 app.use(session({
-  secret: process.env.SECRET,
-  cookie: { maxAge: 60000 },
-  resave: false,               // forces the session to be saved
-  saveUninitialized: false     // dont save unmodified
+  secret: process.env.SECRET,   // Additional security for session (needs real authentication)
+  cookie: { maxAge: 60000 },    // Keep the cookie
+  resave: false,                // Forces the session to be saved
+  saveUninitialized: false      // Dont save unmodified
 }));
 
 // This allows success and error messages to be available to the next page 
@@ -25,10 +25,10 @@ app.use(session({
 // order on the /create route)
 app.use(flash());
 
-// static assets (only css here)
+// Static assets (only css here)
 app.use(express.static(__dirname + '/public'));
 
-// set ejs as templating engine
+// Set ejs as templating engine
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
